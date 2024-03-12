@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:tite_live_shop/product.dart';
 
 class ListViewProduct extends StatelessWidget {
@@ -15,6 +16,7 @@ class ListViewProduct extends StatelessWidget {
               onTap: () {
                 //Passer sur la page détail
                 // avec le produit en paramètre
+                context.go("/detail", extra: listProducts[index]);
               },
               contentPadding: const EdgeInsets.all(8),
               leading: Image.network(listProducts[index].image),

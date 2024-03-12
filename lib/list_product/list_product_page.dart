@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 import '../product.dart';
 import 'list_product.dart';
@@ -59,7 +60,10 @@ class ListProductPage extends StatelessWidget {
         title: const Text("Liste produits"),
         actions: [
           IconButton(
-              onPressed: () {}, icon: const Icon(Icons.shopping_cart_outlined))
+              onPressed: () {
+                context.go("/cart");
+              },
+              icon: const Icon(Icons.shopping_cart_outlined))
         ],
       ),
       body: ListViewProduct(
