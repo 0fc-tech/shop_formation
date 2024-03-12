@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:provider/provider.dart';
 
+import '../cart/cart_model.dart';
 import '../product.dart';
 import 'list_product.dart';
 
@@ -63,7 +65,13 @@ class ListProductPage extends StatelessWidget {
               onPressed: () {
                 context.go("/cart");
               },
-              icon: const Icon(Icons.shopping_cart_outlined))
+              icon: Badge(
+                  label: Text(context
+                      .watch<CartModel>()
+                      .listProducts
+                      .length
+                      .toString()),
+                  child: const Icon(Icons.shopping_cart_outlined)))
         ],
       ),
       body: ListViewProduct(
