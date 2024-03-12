@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tite_live_shop/cart_page.dart';
+import 'package:tite_live_shop/list_product/list_product_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,12 +12,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.lightBlueAccent),
-        useMaterial3: true,
-      ),
-      home: const CartPage(),
-    );
+        title: 'Flutter Demo',
+        theme: ThemeData(
+          colorScheme: ColorScheme.fromSeed(seedColor: Colors.lightBlueAccent),
+          useMaterial3: true,
+        ),
+        home: const ListProductPage() //const CartPage(),
+        );
   }
 }
